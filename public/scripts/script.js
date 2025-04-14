@@ -88,6 +88,8 @@ function convertToSlug(options) {
 
   let slug = filterApostrophes(source);
 
+  slug = replaceUnderscores(slug);
+
   slug = slugify(slug, {
     locale: lang,
     lower: true,
@@ -109,6 +111,11 @@ function filterApostrophes(slug) {
     response = response.replace(new RegExp(apos, 'g'), ' ');
   });
 
+  return response;
+}
+
+function replaceUnderscores(slug) {
+  const response = slug.replace(new RegExp('_', 'g'), '-');
   return response;
 }
 
