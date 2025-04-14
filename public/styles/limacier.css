@@ -32,6 +32,32 @@ hr {
   width: 66%
 }
 
+.about-panel > summary {
+  cursor: pointer;
+
+  color: #3755ce;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.about-panel > summary:hover {
+  text-decoration: none;
+}
+
+.about-panel .content-panel {
+  padding: 8px 0;
+}
+
+.about-panel .content-panel * {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.about-panel .content-panel p {
+  margin: 8px 0;
+}
+
 .form-row {
   margin: 24px 0;
 }
