@@ -16,8 +16,12 @@ h2 {
 }
 
 .content {
-  width: 400px;
+  width: 320px;
   margin: 0 auto;
+
+  @media only screen and (min-width: 768px) {
+    width: 480px;
+  }
 }
 
 section {
