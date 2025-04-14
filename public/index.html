@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Limacier</title>
+    
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="https://assets.jansensan.net/styles/jansensan-v2.css">
+    <link rel="stylesheet" href="./styles/limacier.css" />
+  </head>
+  <body>
+    <div class="content">
+      <h1>Limacier</h1>
+  
+      <section>
+        <form id="slugForm">
+          <div class="form-row">
+            <label for="source">Source *</label>
+            <div
+              id="sourceErrorMessage"
+              class="error-message"
+            >⚠️ Veuillez entrer un texte à convertir</div>
+            <input
+              id="source"
+              type="text"
+              name="source"
+              class="source-textfield"
+            >
+          </div>
+          <fieldset class="form-row">
+            <legend>Langue du texte *</legend>
+            <div
+              id="langErrorMessage"
+              class="error-message"
+            >⚠️ Veuillez choisir une option</div>
+            <div class="cb-container radio-row">
+              <input
+                id="langFR"
+                type="radio"
+                name="lang"
+                value="fr"
+                required
+              >
+              <label for="langFR">Français</label>
+            </div>
+            <div class="cb-container radio-row">
+              <input
+                id="langEN"
+                type="radio"
+                name="lang"
+                value="en"
+              >
+              <label for="langEN">Anglais</label>
+            </div>
+          </fieldset>
+          <input
+            id="submitButton"
+            type="submit"
+            value="Convertir"
+          />
+        </form>
+      </section>
+
+      <hr>
+  
+      <section>
+        <input
+          id="outputTextfield"
+          type="text"
+          name="output"
+          class="slug-output"
+        >
+      </section>
+    </div>
+
+    <script src="./scripts/slugify.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
