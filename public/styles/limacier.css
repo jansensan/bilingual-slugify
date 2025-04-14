@@ -99,7 +99,7 @@ input[type="text"]:invalid {
 }
 
 input[type="text"].source-textfield {
-  width: 100%;
+  width: calc(100% - 18.5px);
 }
 
 .cb-container {
@@ -130,11 +130,45 @@ input[type="submit"] {
   font-size: 14px;
 }
 
+.output-container {
+  position: relative;
+}
+
 input[type="text"].slug-output {
   background-color: #f8f8f8;
   border-color: #b5b5b5;
   box-shadow: none;
-  width: 100%;
+  width: calc(100% - 18.5px);
 
   color: #555;
+}
+
+.copy-slug-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  background-color: #3755ce;
+  border: 2px solid #3755ce;
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  padding: 0 8px;
+
+  color: #f8f8f8;
+  line-height: 0;
+}
+
+.copy-slug-button:hover {
+  background-color: #f8f8f8;
+}
+
+.copy-slug-button svg {
+  fill: #f8f8f8;
+  width: 16px;
+  height: 16px;
+}
+
+.copy-slug-button:hover svg {
+  fill: #3755ce;
 }

@@ -5,6 +5,7 @@ let langErrorMessage;
 let submitButton;
 
 let outputTextfield;
+let copySlugButton;
 
 
 init();
@@ -16,8 +17,10 @@ function init() {
   langErrorMessage = document.getElementById('langErrorMessage');
   submitButton = document.getElementById('submitButton');
   outputTextfield = document.getElementById('outputTextfield');
+  copySlugButton = document.getElementById('copySlugButton');
 
   submitButton.addEventListener('click', onSubmit);
+  copySlugButton.addEventListener('click', onCopy);
 }
 
 function onSubmit(event) {
@@ -56,6 +59,16 @@ function onSubmit(event) {
 
   outputTextfield.value = slug;
 }
+
+function onCopy() {
+  // select text field content
+  outputTextfield.select();
+  outputTextfield.setSelectionRange(0, 99999);
+
+  // copy text from text field
+  navigator.clipboard.writeText(outputTextfield.value);
+}
+
 
 function validate(options) {
   const { sourceField, langGroup } = options;
