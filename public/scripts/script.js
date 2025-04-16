@@ -7,6 +7,7 @@ let outputTextfield;
 let copySlugButton;
 
 
+// auto initialization
 init();
 
 
@@ -21,6 +22,8 @@ function init() {
   copySlugButton.addEventListener('click', onCopy);
 }
 
+
+// events
 function onSubmit(event) {
   event.preventDefault();
 
@@ -68,6 +71,7 @@ function onCopy() {
 }
 
 
+// methods
 function validate(options) {
   const { sourceField, langGroup } = options;
 
