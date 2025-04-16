@@ -25,39 +25,34 @@ function init() {
 
 // events
 function onSubmit(event) {
+  // prevent default browser behaviour on form submission
   event.preventDefault();
 
+  // clear output field
   outputTextfield.value = '';
 
+  // get form dom elements
   const sourceField = document.getElementById('source');
   const langGroupChecked = document.querySelector('input[name="lang"]:checked');
-  const response = validate({
+
+  // set form fields validity
+  const validation = validateFormFields({
     sourceField,
     langGroup: langGroupChecked,
   });
 
-  if (response.sourceField.isValid) {
-    sourceErrorMessage.classList.remove('visible');
-    sourceField.setCustomValidity('');
-  } else {
-    sourceField.setCustomValidity(response.sourceField.context);
-    sourceErrorMessage.classList.add('visible');
-  }
+  displayErrorMessages(validation);
 
-  const langGroup = document.querySelector('input[name="lang"]');
-  if (response.langGroup.isValid) {
-    langErrorMessage.classList.remove('visible');
-    langGroup.setCustomValidity('');
-  } else {
-    langGroup.setCustomValidity(response.langGroup.context);
-    langErrorMessage.classList.add('visible');
-  }
+  // exit method if some field invalid
+  if (!validation.sourceField.isValid|| !validation.langGroup.isValid) return;
 
+  // generate slug
   const slug = convertToSlug({
     source: sourceField.value,
     lang: langGroupChecked.value,
   });
 
+  // display slug
   outputTextfield.value = slug;
 }
 
@@ -72,7 +67,7 @@ function onCopy() {
 
 
 // methods
-function validate(options) {
+function validateFormFields(options) {
   const { sourceField, langGroup } = options;
 
   let response = {};
@@ -96,6 +91,26 @@ function validate(options) {
   }
 
   return response;
+}
+
+function displayErrorMessages(validation) {
+  const sourceField = document.getElementById('source');
+  if (validation.sourceField.isValid) {
+    sourceErrorMessage.classList.remove('visible');
+    sourceField.setCustomValidity('');
+  } else {
+    sourceField.setCustomValidity(validation.sourceField.context);
+    sourceErrorMessage.classList.add('visible');
+  }
+
+  const langGroup = document.querySelector('input[name="lang"]');
+  if (validation.langGroup.isValid) {
+    langErrorMessage.classList.remove('visible');
+    langGroup.setCustomValidity('');
+  } else {
+    langGroup.setCustomValidity(validation.langGroup.context);
+    langErrorMessage.classList.add('visible');
+  }
 }
 
 function convertToSlug(options) {
