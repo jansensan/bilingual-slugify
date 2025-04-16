@@ -1,4 +1,3 @@
-let slugForm;
 let sourceErrorMessage;
 let langErrorMessage;
 
@@ -12,7 +11,6 @@ init();
 
 
 function init() {
-  slugForm = document.getElementById('slugForm');
   sourceErrorMessage = document.getElementById('sourceErrorMessage');
   langErrorMessage = document.getElementById('langErrorMessage');
   submitButton = document.getElementById('submitButton');
