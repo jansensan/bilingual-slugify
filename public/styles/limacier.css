@@ -6,13 +6,20 @@ body {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 
 h2 {
   font-size: 20px;
   font-weight: bold;
+  margin: 16px 0 12px 0;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 16px 0 12px 0;
 }
 
 .content {
@@ -31,35 +38,14 @@ section {
 hr {
   border: none;
   border-top: 1px solid #b5b5b5;
-  margin: 0 auto;
+  margin: 80px auto;
   padding: 0;
   width: 66%
 }
 
-.about-panel > summary {
-  cursor: pointer;
-
-  color: #3755ce;
-  text-decoration: underline;
-  font-size: 14px;
-}
-
-.about-panel > summary:hover {
-  text-decoration: none;
-}
-
-.about-panel .content-panel {
-  padding: 8px 0;
-}
-
-.about-panel .content-panel * {
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.about-panel .content-panel p {
-  margin: 8px 0;
+.form-section {
+  background-color: #f8f8f8;
+  padding: 24px 16px;
 }
 
 .form-row {
@@ -135,12 +121,7 @@ input[type="submit"] {
 }
 
 input[type="text"].slug-output {
-  background-color: #f8f8f8;
-  border-color: #b5b5b5;
-  box-shadow: none;
   width: calc(100% - 18.5px);
-
-  color: #555;
 }
 
 .copy-slug-button {
@@ -171,4 +152,22 @@ input[type="text"].slug-output {
 
 .copy-slug-button:hover svg {
   fill: #3755ce;
+}
+
+.about-section p, a {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.about-section p {
+  margin: 8px 0;
+}
+
+.about-section ul {
+  padding-left: 0;
+}
+
+.about-section ul li {
+  font-size: 14px;
 }

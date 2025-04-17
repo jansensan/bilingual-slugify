@@ -12,17 +12,9 @@
     <div class="content">
       <h1>Limacier</h1>
 
-      <p>Utilitaire pour convertir un titre en <cite lang="en">slug</cite>.</p>
+      <section class="form-section">
+        <small>Tous les champs sont obligatoires.</small>
 
-      <details class="about-panel">
-        <summary>À propos</summary>
-        <div class="content-panel">
-          <p>Cet outil est un prototype minimal pour assister à la création de <a href="https://wordpress.com/fr/go/creation-de-sites-web/qu-est-ce-qu-un-slug/"><cite lang="en">slugs</cite></a> – ou « limace », d'où le mauvais jeu de mot pour le nom de l'outil.</p>
-          <p>Le <a href="https://github.com/jansensan/bilingual-slugify">code source est disponible sur GitHub</a> pour ceux qui souhaitent s'en inspirer</p>
-        </div>
-      </details>
-
-      <section>
         <form id="slugForm">
           <div class="form-row">
             <label for="source">Source *</label>
@@ -71,8 +63,6 @@
         </form>
       </section>
 
-      <hr>
-  
       <section>
         <div class="form-row">
           <label for="outputTextfield">Slug</label>
@@ -92,6 +82,44 @@
             </button>
           </div>
         </div>
+      </section>
+
+      <hr>
+
+      <section class="about-section">
+        <h2>À propos</h2>
+        <p>Cet utilitaire est un prototype minimal pour assister à la création de <a href="https://wordpress.com/fr/go/creation-de-sites-web/qu-est-ce-qu-un-slug/"><cite lang="en">slugs</cite></a> – « limace » en français, d'où le mauvais jeu de mot pour le nom de l'outil.</p>
+
+        <h3>Règles appliquées</h3>
+
+        <p>En ordre d'application :</p>
+
+        <ul>
+          <li>Les multiples variantes d'apostrophes sont retirées</li>
+          <li>Les soulignés (<cite lang="en">underscore</cite>) sont convertis en tirets</li>
+          <li>
+            <p>La librairie JavaScript <a href="https://www.npmjs.com/package/slugify" target="_blank" rel="noopener noreferrer">slugify</a> est utilisée comme premier filtre.</p>
+            <p>Les configurations suivantes sont appliquées :</p>
+            <ul>
+              <li>Tous les caractères sont convertis en minuscules</li>
+              <li>Tous les caractères accentés sont convertis à leur équivalent sans accent</li>
+              <li>Les <a href="https://fr.wikipedia.org/wiki/Diphtongue" target="_blank" rel="noopener noreferrer">diphtongues</a> sont séparés en plusieurs caractères, e.g. « æ » devient « a e »</li>
+              <li>Les caractères spéciaux sont retirés</li>
+              <li>Certains caractères sont convertis en mots, e.g. « % » devient « pourcent »</li>
+            </ul>
+          </li>
+          <li>Les mots de deux caractères et moins sont retirés</li>
+          <li>
+            <p>Pour un meilleur <a href="https://fr.wikipedia.org/wiki/Optimisation_pour_les_moteurs_de_recherche" target="_blank" rel="noopener noreferrer">SEO</a>, plusieurs mots superflus (<a href="https://www.semrush.com/blog/seo-stop-words/" target="_blank" rel="noopener noreferrer"><cite lang="en">stop words</cite></a>) sont égalements retirés.</p>
+            <p>Les mots à retirer dépendent de la langue choisie pour la conversion. Ces listes de mots doit être tenue à jour pour représenter les bonnes pratiques du SEO.</p>
+          </li>
+        </ul>
+
+
+        <h3>Crédits</h3>
+
+        <p>Le <a href="https://github.com/jansensan/bilingual-slugify" target="_blank">code source est disponible sur GitHub</a> pour ceux qui souhaitent s'en inspirer.</p>
+        <p>Créé par <a href="https://mat.jansonblanchet.com/" target="_blank">Mat Janson Blanchet</a>.</p>
       </section>
     </div>
 
